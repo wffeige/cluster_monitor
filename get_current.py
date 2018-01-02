@@ -1,6 +1,8 @@
+#!encoding:utf-8
 #Author:'wangfei'
 #Date:'2018/1/2 0002 17:52'
 #Function:
+
 import os
 import sys
 import getopt
@@ -11,11 +13,14 @@ base_dir=os.path.split(os.path.realpath(__file__))[0]
 
 def usage():
     print "Usage: %s {OPTIONS...}" % sys.argv[0]
+    print "Example: python get_current.py --host=127.0.0.1 --mode=wsrep_connected --type=galera_status"
     print "-h|--help  print help message"
     print "MySQL DSN:"
-    print "  --host, --port, --mode"
-    print "  --host   Query the host of mysql server that you configured in config "
-    print "  --mode   Query the parameters that you input. mode in [tps,qps,buffer_hit,locak_table_rate] or all global status."
+    print "  --host, --port, --mode, --type"
+    print "  --host  Query the host of mysql server that you configured in config "
+    print "  --mode  galera_status:wsrep_cluster_status/wsrep_cluster_size/wsrep_connected ..."
+    print "          slave_status:IO_Running/SQL_Running/wsrep_connected/Seconds_Behind_Master ..."
+    print "  --type  galera_status or slave_status "
     print ""
 
 def get_status(res_file,parameter,mode):
@@ -42,7 +47,7 @@ def check_status(type,mode,port,host):
 
 def main():
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "", ["port=", "mode=","host=","type="])
+        opts, args = getopt.getopt(sys.argv[1:], "", ["port=", "mode=","host=","type=","help"])
     except getopt.GetoptError, err:
         print err
         sys.exit(1)
@@ -50,6 +55,9 @@ def main():
     #从参数取值
     opt_dict = {}
     for k, v in opts:
+        if k in ("--help"):
+            usage()
+            sys.exit()
         if k in ("--port"):
             opt_dict['port'] = v
         elif k in ("--mode"):
