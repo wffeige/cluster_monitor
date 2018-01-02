@@ -25,7 +25,7 @@ socket = '/var/lib/mysql/mysql.sock'
 
 port = 3306
 
-
+举例：
 
 python mysql_status.py  #连接数据库 获取信息 flush 到本地
 
