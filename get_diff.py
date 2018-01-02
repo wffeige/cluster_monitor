@@ -17,7 +17,7 @@ def usage():
     print "MySQL DSN:"
     print "  --host, --port, --mode"
     print "  --host   Query the host of mysql server that you configured in config "
-    print "  --mode   Query the parameters that you input. mode in [tps,qps,buffer_hit,locak_table_rate] or all global status."
+    print "  --mode   Query the parameters that you input. mode in [tps,qps,buffer_hate,locak_table_rate] or all global status."
     print ""
 
 def get_global_status(res_file, parameter):

@@ -89,9 +89,9 @@ ft_stopword_file	(built-in)
 general_log	OFF
 general_log_file	node1.log
 group_concat_max_len	1024
-gtid_binlog_pos	0-1-4432779
-gtid_binlog_state	0-1-4432779
-gtid_current_pos	0-1-4432779
+gtid_binlog_pos	0-1-4438235
+gtid_binlog_state	0-1-4438235
+gtid_current_pos	0-1-4438235
 gtid_domain_id	0
 gtid_ignore_duplicates	OFF
 gtid_slave_pos	
@@ -485,7 +485,7 @@ slave_sql_verify_checksum	ON
 slave_transaction_retries	10
 slave_type_conversions	
 slow_launch_time	2
-slow_query_log	ON
+slow_query_log	OFF
 slow_query_log_file	slow.log
 socket	/var/lib/mysql/mysql.sock
 sort_buffer_size	2097152
