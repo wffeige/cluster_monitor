@@ -1,0 +1,24 @@
+[node1]
+host = 192.168.64.35
+user = root
+password = rootroot
+database = test
+socket = '/var/lib/mysql/mysql.sock'
+port = 3306
+
+[node2]
+host = 192.168.64.44
+user = root
+password = rootroot
+database = test
+socket = '/var/lib/mysql/mysql.sock'
+port = 3306
+
+[node3]
+host = 192.168.64.45
+user = root
+password = rootroot
+database = test
+socket = '/var/lib/mysql/mysql.sock'
+port = 3306
+
